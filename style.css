@@ -1,0 +1,447 @@
+@font-face {
+    font-family: 'Satoshi', Sans-serif;
+    src: url('./assets/font/Satoshi-Regular.eot');
+    src: url('./assets/font/Satoshi-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/font/Satoshi-Regular.woff') format('woff'),
+        url('./assets/font/Satoshi-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi', Sans-serif;
+    src: url('./assets/font/Satoshi-Medium.eot');
+    src: url('./assets/font/Satoshi-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./assets/font/Satoshi-Medium.woff') format('woff'),
+        url('./assets/font/Satoshi-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi', Sans-serif;
+    src: url('./assets/font/Satoshi-Bold.eot');
+    src: url('./assets/font/Satoshi-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/font/Satoshi-Bold.woff') format('woff'),
+        url('./assets/font/Satoshi-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --text-color: #000D50;
+  --text-white: #FFFFFF;
+  --text-white-gray: #F8F8F8;
+}
+body{
+  font-family: 'Satoshi' , Sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: -0.18px;
+  color: var(--text-color);
+}
+ol,ul{
+  list-style: none;
+}
+li{
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+button{
+  cursor: pointer;
+  border: none;
+}
+h1,h2,h3,h4,h5,h6,a,address,label,input,button{
+  font-family: 'Satoshi', Sans-serif;
+}
+
+h1{
+  font-size: 65px;
+  font-weight: 500;
+  line-height: 68.25px;
+  letter-spacing: -0.65px;
+  color: var(--text-white);
+}
+h2{
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 55px;
+  letter-spacing: -0.5px;
+}
+h3{
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35.2px;
+  letter-spacing: -0.32px;
+}
+h5{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.18px;
+}
+
+.common-wrap{
+  max-width: 1839px;
+  margin: 0 auto;
+  padding: 0 14px 0 15px;
+}
+.btn{
+  background-color: var(--text-color);
+  padding: 13px 28px;
+  color: var(--text-white);
+  font-size: 18px;
+  line-height: 19.8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+}
+.btn img{
+  width: 10px;
+}
+
+
+
+/* Header section start */
+.header-section{
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 55px;
+}
+.main-menu {
+  position: relative;
+}
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    padding: 22px 49px;
+    gap: 80px;
+    background: #fff;
+    border-radius: 15px;
+}
+
+
+.main-menu li a.header-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main-menu li a {
+  text-decoration: none;
+  color: #363636;
+  transition: 0.3s ease-in;
+}
+.main-menu li a:hover{
+  color: #0020C3;
+}
+
+.main-menu > li {
+  position: relative;
+  display: inline-block;
+}
+.main-menu li .dropdown{
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  background-color: var(--text-white);
+  padding: 22px 49px;
+  border-radius: 15px;
+  display: none;
+  align-items: center;
+  gap: 104px;
+}
+.main-menu li.show-dropdown > .dropdown {
+  display: block;
+}
+.main-menu li span .minus {
+  display: none; /* by default minus icon hidden */
+}
+
+.main-menu li:hover span .plus {
+  display: none; /* hover করলে plus hide */
+}
+
+.main-menu li:hover span .minus {
+  display: inline-block; /* hover করলে minus show */
+}
+
+.main-menu li span .icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+.main-menu li span svg {
+  transition: transform 0.3s ease;
+}
+.hamburger-icon{
+    display: none;
+  }
+
+@media (max-width: 1024px) {
+  .main-menu{
+    display: none;
+  }
+  .main-menu li {
+    width: 100%;
+  }
+  .hamburger-icon{
+    display: block;
+  }
+  ul.main-menu {
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+.header-section {
+    position: relative;
+}
+.main-menu li a.header-link{
+  justify-content: space-between;
+}
+.main-menu li .dropdown{
+    flex-direction: column;
+    gap: 15px;
+}
+}
+
+
+/* banar-section start */
+
+.banar-section{
+  background-image: url(./assets/images/home-banar-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -122px;
+}
+.banar-wrap{
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 362px;
+  padding-bottom: 394px;
+  
+}
+.play-wrap{
+  width: calc(100% - 788px);
+  position: relative;
+}
+.play-wrap button{
+  max-width: 91px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 20%;
+}
+.banar-content{
+  width: 788px;
+}
+.banar-content h1{
+  max-width: 484px;
+  
+}
+.explore-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px ;
+  position: absolute;
+  left: 0;
+  bottom: 44px;
+}
+.explore-wrap span{
+  color: var(--text-white);
+}
+@media (max-width: 1024px){
+  .banar-content h1{
+    max-width: 484px;
+    display: none;
+  }
+  .play-wrap{
+    width: 100%;
+  }
+  .play-wrap button{
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/* Alteri section start */
+.alteri-section{
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.alteri-wrap{
+  display: flex;
+  justify-content: space-between;
+   
+}
+.alteri-content-left{
+  max-width: 42.265%;
+}
+.alteri-content-right{
+  max-width: 43.535%;
+}
+.alteri-content-right p{
+  font-size: 22px;
+  line-height: 24.2px;
+  padding-bottom: 25px;
+}
+/* Alteri section end */
+
+/* alteri-builds start */
+.alteri-builds{
+  padding-top: 50px;
+}
+/* alteri-builds end */
+
+/* Footer section start */
+.footer-section{
+  background-color: var(--text-white-gray);
+  padding: 61px 0 56px;
+}
+.footer-wrap{
+  display: flex;
+  gap: 16.574%;
+  padding-bottom: 50px;
+}
+.footer-logo{
+  max-width: 187px;
+  width: 100%;
+}
+.footer-content{
+  width: calc(100% - 187px);
+  display: flex;
+  flex-flow: wrap;
+  gap: 137px;
+}
+.investors{
+  margin-inline: 47px;
+}
+.footer-item h5{
+  margin-bottom: 35px;
+}
+.footer-item li{
+   margin-bottom: 15px;
+
+}
+.footer-item li a{
+  color: var(--text-color);
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.footer-item li:last-child{
+  margin-bottom: 0px;
+}
+.footer-social{
+  border-top: 1px solid rgba(0, 13, 80, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 35px;
+}
+.copyright{
+  display: flex;
+  gap: 336px;
+}
+.copyright{
+  font-weight: 500;
+}
+.social{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.social-mob{
+  display: none;
+}
+@media (max-width: 640px){
+  .footer-content{
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px){
+  .social-mob{
+    display: flex;
+  }
+  .social-desk{
+    display: none;
+  }
+  .copyright{
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .footer-social{
+    padding-top: 25px;
+  }
+  .footer-section{
+    padding: 39px 0 35px 0;
+  }
+  .footer-logo{
+    margin-bottom: 5px;
+  }
+  .footer-wrap{
+    padding-bottom: 25px;
+  }
+  .footer-item h5{
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .footer-item li a{
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+@media (max-width: 1024px){
+  .footer-wrap{
+    flex-direction: column;
+    gap: 50px;
+  }
+  .copyright{
+    display: flex;
+    gap: 50px;
+  }
+}
+@media (max-width: 1550px){
+  .footer-logo{
+    max-width: 105px;
+  }
+  .investors{
+    margin: 0;
+  }
+  
+  .footer-content{
+    gap: 50px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+/* Footer section end */
