@@ -108,11 +108,32 @@ h5{
   align-items: center;
   gap: 10px;
   border-radius: 5px;
+  transition: 0.3s ease-in;
 }
 .btn img{
   width: 10px;
 }
-
+.btn:hover{
+  background-color: rgba(0, 13, 80, .8);
+}
+@media(max-width:768px){
+  h1{
+    font-size: 40px;
+    line-height: 42px;
+  }
+  h2{
+    font-size: 32px;
+    line-height: 35.2px;
+  }
+  h3{
+    font-size: 22px;
+    line-height: 24.2px;
+  }
+  h5{
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
 
 
 /* Header section start */
@@ -280,6 +301,9 @@ h5{
   color: var(--text-white);
 }
 @media (max-width: 1024px){
+  .banar-section{
+    background-position: -435px center;
+  }
   .banar-content h1{
     max-width: 484px;
     display: none;
@@ -301,7 +325,6 @@ h5{
 .alteri-wrap{
   display: flex;
   justify-content: space-between;
-   
 }
 .alteri-content-left{
   max-width: 42.265%;
@@ -314,13 +337,179 @@ h5{
   line-height: 24.2px;
   padding-bottom: 25px;
 }
+@media(max-width:1024px){
+  .alteri-section{
+    padding-top: 55px;
+  }
+  .alteri-wrap{
+    flex-direction: column;
+    gap: 35px;
+  }
+  .alteri-content-left,
+  .alteri-content-right{
+    max-width: 100%;
+  }
+}
 /* Alteri section end */
 
 /* alteri-builds start */
 .alteri-builds{
   padding-top: 50px;
 }
+.alteri-builds img{
+  vertical-align: bottom;
+}
 /* alteri-builds end */
+
+
+/* global energy section start */
+.energy-section{
+  background-color: var(--text-white-gray);
+}
+.energy-wrap{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 56px;
+  padding-bottom: 51px;
+}
+.energy-image{
+  max-width: 52.320%;
+  width: 100%;
+}
+.energy-content{
+  max-width: calc(100% - 52.320%);
+  width: 100%;
+  padding-left: 75px;
+}
+.content-wrap{
+  padding-top: 26px;
+  padding-bottom: 58px;
+  border-top: 1px solid rgba(0, 13, 80, 0.4);
+  border-bottom: 1px solid rgba(0, 13, 80, 0.4);
+  margin-bottom: 25px;
+}
+.box-image{
+  padding-block: 65px;
+}
+.content-top{
+  margin-bottom: 35px;
+}
+@media(max-width:768px){
+  .energy-wrap{
+    padding-top: 37px;
+    padding-bottom: 38px;
+  }
+}
+@media(max-width:1024px){
+  .footer-wrap{
+    padding-inline: 24px;
+  }
+  .energy-wrap{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .energy-content{
+    max-width: 100%;
+    padding-left: 0;
+  }
+  .energy-image{
+    order: 2;
+    max-width: 100%;
+  }
+  .content-wrap{
+    padding-top: 0;
+    border-top: 0;
+    padding-bottom: 35px;
+    margin-bottom: 15px;
+  }
+  .box-image{
+    padding-block: 35px;
+  }
+}
+
+
+/* global energy section end */
+
+/* Connect section start */
+.connect-section{
+  padding-top: 110px;
+  padding-bottom: 167px;
+}
+.connect-wrap {
+  display: grid;
+  grid-template-columns: 52.320% 43.536%; /* 2 column */
+  grid-template-rows: auto auto; /* 2 row */
+  column-gap: 4.143%;
+  row-gap: 50px;
+}
+
+.form-container {
+  grid-column: 1; /* Left top */
+  grid-row: 1;
+  background: #f8f8f8;
+  padding: 20px;
+}
+
+.map {
+  grid-column: 2; /* Right top */
+  grid-row: 1 / span 2; /* Top theke bottom porjonto map stretch hobe */
+}
+
+.contact-info {
+  grid-column: 1; /* Left bottom */
+  grid-row: 2;
+  background: #f1f1f1;
+  padding: 20px;
+}
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 column */
+  grid-gap: 20px; /* gap between items */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-full {
+  grid-column: span 2; /* Full row item */
+  display: flex;
+  flex-direction: column;
+}
+
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .connect-wrap {
+    grid-template-columns: 1fr; /* 1 column */
+    grid-template-rows: auto auto auto; /* 3 row */
+    column-gap: 0;
+  }
+
+  .form-container {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .map {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .contact-info {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+}
+/* Connect section end */
 
 /* Footer section start */
 .footer-section{
@@ -357,6 +546,7 @@ h5{
   text-decoration: none;
   margin-bottom: 15px;
   font-weight: 500;
+  transition: .3s ease-in;
 }
 .footer-item li:last-child{
   margin-bottom: 0px;
@@ -382,6 +572,9 @@ h5{
 }
 .social-mob{
   display: none;
+}
+.footer-item li a:hover{
+  color: #0020C3;
 }
 @media (max-width: 640px){
   .footer-content{
@@ -410,10 +603,6 @@ h5{
   }
   .footer-wrap{
     padding-bottom: 25px;
-  }
-  .footer-item h5{
-    font-size: 16px;
-    line-height: 16px;
   }
   .footer-item li a{
     font-size: 16px;
