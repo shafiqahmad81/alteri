@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alteri | Home</title>
+  <title>Alteri | About</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body class="about-page">
   <!-- Header section start -->
   <header class="header-section">
     <div class="common-wrap">
@@ -37,7 +38,7 @@
             </div>
           </li>
           <li>
-            <a class="header-link" href="#">Operations <span class="icon">
+            <a class="header-link" href="./operation.html">Operations <span class="icon">
                 <svg class="plus" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none">
                   <path fill="#363636"
                     d="M.44 4.376h3.942V.434h1.116v3.942H9.44v1.116H5.498v3.96H4.382v-3.96H.44V4.376Z" />
@@ -113,13 +114,9 @@
   <section class="banar-section">
     <div class="common-wrap">
       <div class="banar-wrap">
-        <div class="play-wrap">
-          <button>
-            <img src="./assets/images/play.png" alt="play icon">
-          </button>
-        </div>
+
         <div class="banar-content">
-          <h1>Investing in the Future of Energy Infrastructure</h1>
+          <h1>Our Mission, Vision & Values</h1>
         </div>
         <div class="explore-wrap">
           <span>Explore</span>
@@ -142,50 +139,131 @@
         <p>We focus on efficient, scalable, and energy-aligned deployments that integrate directly with the power grid
           or source. By pairing compute with real-time energy dynamics, we reduce waste, unlock underutilized capacity,
           and enable partners to monetize power more effectively.</p>
-        <button class="btn">Read More <img src="./assets/images/explore-right-icon.png"
-            alt="explore-right-icon"></button>
       </div>
     </div>
   </section>
 
   <!-- Alteri content section end -->
 
-  <!-- Alteri builds start -->
-  <section class="alteri-builds">
-    <div>
-      <img class="alteri-bg" src="./assets/images/alteri-builds-bg.png" alt="alteri bg">
-      <img class="alteri-small-bg" src="./assets/images/alteri-builds-small-bg.png" alt="alteri bg">
-    </div>
-  </section>
-  <!-- Alteri builds end -->
-
-  <!-- global energy section start -->
-  <section class="energy-section">
+  <!-- Our pillars section start -->
+  <section class="pillar-section">
     <div class="common-wrap">
-      <div class="energy-wrap">
-        <div class="energy-image">
-          <img src="./assets/images/energy-image.png" alt="energy company image">
-        </div>
-        <div class="energy-content">
-          <div class="content-wrap">
-            <h2>Global Energy Operations</h2>
-            <div class="box-image">
-              <img class="box-img" src="./assets/images/box.svg" alt="box">
-              <img class="box-small" src="./assets/images/box-small.svg" alt="box">
+      <!-- pillar wrap -->
+      <div class="pillar-wrapper">
+        <h2>Our Pillars</h2>
+        <div class="pillar-wrap">
+          <div class="pillar-item left">
+            <div>
+              <img src="./assets/images/pillar-1.png" alt="pillar icon">
             </div>
-            <p class="content-top">We create digital infrastructure that works efficiently - from large facilities
-              connected to the power
-              grid to distributed solutions in remote regions. </p>
-            <p>We are committed to scalable and sustainable computing that supports energy transformation around the
-              world.</p>
+            <div class="pillar-content">
+              <h3>Equitable Access</h3>
+              <p>Offering SaaS-powered solutions that democratize digital asset mining, making it accessible to both
+                retail and institutional clients.</p>
+            </div>
+            <div class="pillar-dot"></div>
           </div>
-          <button class="btn">Read More <img src="./assets/images/explore-right-icon.png"
-              alt="explore-right-icon"></button>
+          <div class="pillar-item mid">
+            <div>
+              <img src="./assets/images/pillar-2.png" alt="pillar icon">
+            </div>
+            <div class="pillar-content">
+              <h3>Energy Optimization</h3>
+              <p>Integrating advanced energy management practices to minimize operational costs, reduce waste, and
+                leverage real-time energy dynamics for low-cost computing.</p>
+            </div>
+            <div class="pillar-dot"></div>
+          </div>
+          <div class="pillar-item right">
+            <div>
+              <img src="./assets/images/pillar-3.png" alt="pillar icon">
+            </div>
+            <div class="pillar-content">
+              <h3>Utility-Scale Computing</h3>
+              <p>Deploying intelligent software automation to optimize ASIC performance, extend hardware longevity, and
+                maximize profitability.</p>
+            </div>
+            <div class="pillar-dot"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Executive Team -->
+      <div class="pillar-wrapper executive">
+        <h2>Executive Team</h2>
+        <div class="executive-wrap">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="pillar-item">
+                  <div>
+                    <img src="./assets/images/officer-team-1.png" alt="team member">
+                  </div>
+                  <div class="pillar-content">
+                    <h3>Mary Lawson</h3>
+                    <p>Chief Operating Officer</p>
+                    <div class="social">
+                      <div><img src="./assets/images/team-linkdine.png" alt="linkedin"></div>
+                      <div><img src="./assets/images/team-x.png" alt="x icon"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="pillar-item">
+                  <div>
+                    <img src="./assets/images/officer-team-2.png" alt="team member">
+                  </div>
+                  <div class="pillar-content">
+                    <h3>Mary Lawson</h3>
+                    <p>Chief Operating Officer</p>
+                    <div class="social">
+                      <div><img src="./assets/images/team-linkdine.png" alt="linkedin"></div>
+                      <div><img src="./assets/images/team-x.png" alt="x icon"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="pillar-item">
+                  <div>
+                    <img src="./assets/images/officer-team-3.png" alt="team member">
+                  </div>
+                  <div class="pillar-content">
+                    <h3>Mary Lawson</h3>
+                    <p>Chief Operating Officer</p>
+                    <div class="social">
+                      <div><img src="./assets/images/team-linkdine.png" alt="linkedin"></div>
+                      <div><img src="./assets/images/team-x.png" alt="x icon"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="pillar-item">
+                  <div>
+                    <img src="./assets/images/officer-team-3.png" alt="team member">
+                  </div>
+                  <div class="pillar-content">
+                    <h3>Mary Lawson</h3>
+                    <p>Chief Operating Officer</p>
+                    <div class="social">
+                      <div><img src="./assets/images/team-linkdine.png" alt="linkedin"></div>
+                      <div><img src="./assets/images/team-x.png" alt="x icon"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- If you want navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- global energy section end -->
+  <!-- Our pillars section end -->
 
   <!-- Connect section start -->
   <div class="connect-section">
@@ -350,7 +428,7 @@
   </footer>
   <!-- Footer section end -->
 
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="./assets/js/main.js"></script>
 </body>
 

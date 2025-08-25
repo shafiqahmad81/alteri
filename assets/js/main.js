@@ -73,3 +73,127 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+
+
+const swiper = new Swiper('.mySwiper', {
+  spaceBetween: 20,          // Slide এর মাঝে gap
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false, 
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    0: {                     // Mobile
+      slidesPerView: 1.5,    // 1.5 slide দেখাবে
+    },
+    768: {                   // Tablet or bigger
+      slidesPerView: 3,      // 3 slide দেখাবে
+    }
+  }
+});
+
+
+// Location js
+
+const tabs = document.querySelectorAll(".tab-item");
+
+const circleMap = [
+  ["circle-1-outer", "circle-1-inner"],  // All
+  ["circle-2-outer", "circle-2-inner"],  // Texas
+  ["circle-3-outer", "circle-3-inner"],  // Florida
+  ["circle-4-outer", "circle-4-inner"]   // California
+];
+
+// original radius
+const circleOriginalR = {
+  "circle-1-inner": 7.5,
+  "circle-1-outer": 14.5,
+  "circle-2-inner": 7.5,
+  "circle-2-outer": 14.5,
+  "circle-3-inner": 7.5,
+  "circle-3-outer": 14.5,
+  "circle-4-inner": 7.5,
+  "circle-4-outer": 14.5
+};
+
+// active radius (enlarged)
+const circleActiveR = {
+  "circle-1-inner": 10,
+  "circle-1-outer": 18,
+  "circle-2-inner": 10,
+  "circle-2-outer": 18,
+  "circle-3-inner": 10,
+  "circle-3-outer": 18,
+  "circle-4-inner": 10,
+  "circle-4-outer": 18
+};
+
+// প্রথম tab ডিফল্ট active
+setActiveCircle(0);
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    // সব tab active সরানো
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    // circle update
+    setActiveCircle(index);
+  });
+});
+
+function setActiveCircle(index) {
+  // সব circle reset
+  circleMap.flat().forEach(id => {
+    const el = document.getElementById(id);
+    if(el) {
+      el.setAttribute("fill", "#0020C3");
+      el.setAttribute("r", circleOriginalR[id]);
+    }
+  });
+
+  // active circle update
+  circleMap[index].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) {
+      el.setAttribute("fill", "#44CC3B");
+      el.setAttribute("r", circleActiveR[id]);
+    }
+  });
+}
+
+// tab-item
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tab = document.querySelectorAll(".tab-item");
+  const areas = document.querySelectorAll(".location-area");
+
+  // প্রথম tab active
+  areas.forEach(area => area.classList.remove("active"));
+  document.querySelector(".all-area").classList.add("active");
+
+  tab.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // সব tab থেকে active সরানো
+      tab.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // সব location-area hide
+      areas.forEach(area => area.classList.remove("active"));
+
+      // data-target অনুযায়ী show
+      const targetClass = tab.getAttribute("data-target");
+      const targetArea = document.querySelector(`.${targetClass}`);
+      if(targetArea) targetArea.classList.add("active");
+    });
+  });
+});
