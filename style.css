@@ -124,7 +124,7 @@ p{
 .btn:hover{
   background-color: rgba(0, 13, 80, .8);
 }
-@media(max-width:768px){
+@media(max-width:1024px){
   
   h1{
     font-size: 40px;
@@ -1174,6 +1174,20 @@ input, select, textarea:focus{
 
 .operation-page .banar-section{
   background-image: url(./assets/images/operation-banar.png);
+
+}
+.operation-page .banar-wrap, 
+.investors-page .banar-wrap {
+  padding-bottom:580px;
+}
+.operation-page .banar-content,
+.investors-page .banar-content {
+  position: absolute;
+  bottom: 146px;
+}
+.operation-page .banar-section h1,
+.investors-page .banar-section h1{
+  max-width: 545px;
 }
 .location-section{
   background-color: var(--text-white-gray);
@@ -1255,10 +1269,12 @@ input, select, textarea:focus{
   display: flex;
   align-items: center;
 }
-.location-content p{
+.location-area p{
   font-size: 18px;
   line-height: 19.8px;
   letter-spacing: -0.18px;
+}
+.location-content p{
   margin-bottom: 28px;
 }
 .address-content{
@@ -1268,11 +1284,7 @@ input, select, textarea:focus{
   font-weight: 500;
   margin-bottom: 25px;
 }
-.address-content p{
-  font-size: 18px;
-  line-height: 19.8px;
-  letter-spacing: -0.18px;
-}
+
 .address-content .address{
   margin-bottom: 15px;
   gap: 10px;
@@ -1280,6 +1292,12 @@ input, select, textarea:focus{
 .location-content{
   width: 50%;
 }
+.location-img{
+    min-width: 143px;
+  }
+  .location-img img{
+    min-height: 100%;
+  }
 .location-content p{
   max-width: 516px;
 }
@@ -1309,4 +1327,430 @@ circle.active {
   opacity: 1;
   padding: 20px;
 }
+
+
+
+@media (max-width:440px){
+  .location-img{
+    height: 112px;
+  }
+}
+@media (max-width:768px){
+  .location-area{
+    flex-direction: column;
+    gap: 35px;
+  }
+  .location-address{
+    width: 100%;
+  }
+  .location-content{
+    width: 100%;
+  }
+  .location-content button{
+    width: 100%;
+  }
+  .address-content .address{
+    margin-bottom: 13px;
+  }
+  
+}
+@media (max-width:1024px){
+ 
+  .location-address{
+    gap: 15px;
+  }
+  .address-content h3{
+    margin-bottom: 15px;
+  }
+  .location-area p{
+    font-size: 14px;
+    line-height: 15.4px;
+    letter-spacing: -0.14px;
+
+  }
+  .address-content h5{
+    font-size: 16px;
+    line-height: 17.6px;
+    letter-spacing: -0.16px;
+  }
+  .address{
+    margin-bottom: 13px;
+  }
+  
+}
 /* operation page stayle end */
+
+
+
+/* Fectory section start */
+.fectory-section{
+  padding-top: 127px;
+  padding-bottom: 76px;
+}
+.fectory-wrap{
+  display: flex;
+  gap: 18px;
+  margin-bottom: 50px;
+}
+.fectory-img-wrap{
+  width: 50%;
+}
+.fectory-content-wrap{
+  width: 50%;
+  background-color: var(--text-white-gray);
+  padding: 50px 46px 0 ;
+  border-radius: 25px;
+}
+.fectory-content-wrap p{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 19.8px;
+  letter-spacing: -0.18px;
+}
+.fectory-p{
+  padding-bottom: 25px;
+}
+.fectory-info-wrap{
+  padding-top: 50px;
+  padding-bottom: 51px;
+}
+.fectory-info{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-top: 1px solid rgba(0, 13, 80, 0.4);
+  padding-block: 13px;
+  color: var(--text-blue);
+}
+.fectory-info:last-child{
+  border-bottom: 1px solid rgba(0, 13, 80, 0.4);
+}
+.fectory-info h5{
+  flex: 1;
+  line-height: 19.8px;
+  font-weight: 700;
+}
+
+@media (max-width:768px){
+  .fectory-section{
+    padding-top: 37px;
+    padding-bottom: 40px;
+  }
+  .fectory-info{
+    gap: 10px;
+  }
+  .fectory-info img{
+    max-width: 80%;
+  }
+  .fectory-info h5,
+  .fectory-info span{
+    font-size: 14px;
+    line-height: 15.4px;
+    letter-spacing: -0.14px;
+  }
+  .fectory-info-wrap{
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+  .fectory-wrap{
+    margin-bottom: 35px;
+  }
+  .fectory-content-wrap p{
+    font-size: 14px;
+    line-height: 15.4px;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+  }
+  
+}
+
+@media (max-width:1024px){
+  .fectory-wrap{
+    flex-direction: column;
+
+  }
+  .fectory-img-wrap{
+    width: 100%;
+    order: 1;
+  }
+  .fectory-content-wrap{
+    width: 100%;
+    order: 2;
+    padding: 25px;
+  }
+}
+/* Fectory section end */
+
+/* partners section start */
+.partners-section{
+  padding-bottom: 187px;
+}
+.partners-inner{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 35px;
+}
+.partners-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 13, 80, 0.4);
+  height: 133px;
+  border-radius: 25px;
+}
+.partners-img{
+  display: flex;
+  justify-content: center;
+}
+.partners-img img{
+  width: auto;
+}
+
+
+@media (max-width:768px){
+  .partners-section{
+    padding-bottom: 80px;
+  }
+  .partners-inner{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .partners-item{
+    height: 100px;
+  }
+  .partners-img img{
+    max-width: 78%;
+  }
+}
+/* partners section end */
+
+
+/* investors page start */
+
+.aletri-card-section{
+  padding-top: 50px;
+}
+.investors-page .banar-section{
+  background-image: url(./assets/images/investors-banar-bg.png);
+}
+
+.investors-page .form-container h2{
+  max-width: 460px;
+  letter-spacing: -0.5px;
+  margin-bottom: 39px;
+}
+.investors-page .alteri-content-left{
+  max-width: 49.281%;
+}
+.investors-page .alteri-content-right{
+  max-width: calc(100% - 49.281%);
+  padding-left: 130px;
+}
+.investors-page .social-wrap{
+  margin-top: 35px;
+}
+.investors-page .alteri-content-left h2{
+  margin-bottom: 77px;
+}
+.investors-page .social-wrap{
+  gap: 15px;
+}
+.aletri-card-area{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+.alteri-card-item{
+  position: relative;
+}
+.content-bottom{
+  color: var(--text-blue);
+}
+@media(max-width:1024px){
+  .investors-page .alteri-content-left{
+    max-width: 100%;
+  }
+  .investors-page .alteri-content-right{
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+/* card section start */
+.card-wrap{
+  display: flex;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(0, 13, 80, 0) 0%, #000D50 69.84%);
+  padding-inline: 20px;
+  padding-top: 28px;
+  padding-bottom: 26px;
+  color: var(--text-white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 25px 25px;
+}
+.card-content{
+  max-width: 239px;
+}
+.card-content span{
+  margin-block: 12px;
+  display: inline-block;
+}
+.card-content p{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 17.6px;
+  letter-spacing: -0.16px;
+}
+.card-social-icon{
+  position: absolute;
+  right: 20px;
+  bottom: 23px;
+}
+
+@media(max-width:768px){
+  .aletri-card-area{
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .card-content{
+    max-width: 153px;
+  }
+  .card-abatar img{
+    max-width: 78%;
+  }
+  .card-content span{
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.12px;
+  }
+  .card-content p{
+    font-size: 12px;
+    line-height: 13.2px;
+    letter-spacing: -0.12px;
+  }
+}
+/* card section end */
+
+/* inquries section start */
+.inquiries-wrap{
+  display: flex;
+  padding-block: 21px;
+  padding-inline: 20px;
+  background-color: var(--text-white-gray);
+  border-radius: 25px;
+}
+.inquiries-info .btn{
+  background-color: transparent;
+  color:var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  padding-block: 9px;
+  padding-inline: 26px;
+  max-width: 274px;
+}
+.inquiries-info .btn img{
+  width: 26px;
+}
+.inquiries-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inquiries p{
+  font-size: 18px;
+  line-height: 19.8px;
+  letter-spacing: -0.18px;
+  margin-top: 25px;
+}
+.inquiries-img{
+  width: 38.705%;
+}
+.inquiries-info{
+  width: calc(100% - 38.705%);
+  padding-left: 50px;
+}
+
+@media (max-width:1024px){
+  /* .inquiries-img{
+    width: 100%;
+  }
+.inquiries-info{
+    width: 100%;
+  } */
+}
+
+/* company information start */
+.investors-page .energy-wrap{
+  padding: 0;
+}
+.investors-page .energy-content p{
+  max-width: unset;
+}
+.investors-page .energy-section{
+  background-color: transparent;
+}
+
+.investors-page .energy-image{
+  width: 52.541%;
+}
+.investors-page .energy-content{
+  width: calc(100% - 52.541%);
+}
+
+@media (max-width:1024px){
+.investors-page .energy-image{
+  width: 100%;
+}
+.investors-page .energy-content{
+  width: 100%;
+}
+}
+/* company information end */
+
+
+/* partnership-page start */
+.development-section{
+  padding-top: 125px;
+}
+.partnership-page .banar-section{
+  background-image: url(./assets/images/partnership-banar-bg.png);
+}
+.development-area{
+  display: flex;
+
+}
+
+.development-content{
+  width: calc(100% - 52.320%);
+  padding-right: 74px;
+}
+.development-img{
+  width: 52.320%;
+}
+.development-content h2{
+  margin-bottom: 55px;
+}
+.development-item {
+  background-color: var(--text-white-gray);
+  padding: 20px 20px 25px;
+  border-radius: 25px;
+  position: relative;
+  margin-bottom: 13px;
+}
+.development-item p{
+  margin-top: 75px;
+}
+.development-item img{
+  width: auto;
+}
+.partnership-page .pillar-dot{
+  top: 20px;
+  right: 20px;
+}
+.scales-whether{
+  max-width: 423px;
+}
+.development-item p{
+  max-width: 616px;
+}
