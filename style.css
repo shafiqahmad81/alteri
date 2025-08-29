@@ -819,7 +819,7 @@ input, select, textarea:focus{
   }
   input::placeholder, select::placeholder, textarea::placeholder{
   font-size: 14px;
-  line-height: 12.6px;
+  line-height: 15.6px;
 }
   .form-group{
     grid-column: span 2;
@@ -847,8 +847,8 @@ input, select, textarea:focus{
     gap: 46px;
   }
   .contact-item p{
-    font-size: 14px;
-    line-height: 12.6px;
+    font-size: 13px;
+    line-height: 15.6px;
     max-width: 100px;
   }
   .contact-item:nth-child(2){
@@ -871,8 +871,8 @@ input, select, textarea:focus{
     display: none;
   }
   .contact-item a{
-    font-size: 14px;
-    line-height: 12.6px;
+    font-size: 13px;
+    line-height: 15.6px;
   }
   .social-wrap a{
     max-width: 27px;
