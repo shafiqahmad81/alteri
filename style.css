@@ -174,6 +174,7 @@ p{
   justify-content: space-between;
   padding-block: 10px;
 }
+
 .main-menu {
   position: relative;
 }
@@ -268,6 +269,9 @@ p{
 .dropdown-wrap {
   display: none;
 }
+.link-active{
+  font-weight: 700;
+}
 
 @media (min-width: 1024px) {
   
@@ -283,6 +287,13 @@ p{
   }
 }
 @media (max-width: 1024px) {
+  .header-section{
+    top: 14px;
+  }
+  .header-wrap img{
+    max-width: 75%;
+  }
+  
   .main-menu .social.social-mob{
     margin-top: 151px;
   }
@@ -372,7 +383,7 @@ p{
     right: 36.4%;
 }
 .banar-content{
-  width: 788px;
+  max-width: 788px;
 }
 .banar-content h1{
   max-width: 484px;
@@ -390,15 +401,29 @@ p{
   color: var(--text-white);
 }
 @media (max-width: 1024px){
-  .banar-section{
+  .home-page .banar-section{
     background-position: -440px center;
-    margin-top: -55px;
+    margin-top: -47px;
   }
   .banar-wrap {
     padding-top: 371px;
     padding-bottom: 404px;
 }
-  .banar-content h1{
+.about-page .banar-section {
+    background-position: -314px center !important;
+    margin-top: -78px !important;
+  }
+  .about-page .banar-wrap {
+    padding-top: 318px !important;
+    padding-bottom: 404px !important;
+ }
+ .explore-wrap {
+    bottom: 28px;
+  }
+  .explore-wrap span {
+    font-size: 14px;
+  }
+  .home-page .banar-content h1{
     max-width: 484px;
     display: none;
   }
@@ -413,7 +438,7 @@ p{
     left: 71px;
     bottom: 165px;
 }
-  .explore-wrap{
+ .home-page .explore-wrap{
     display: none;
   }
 }
@@ -422,6 +447,24 @@ p{
 .alteri-section{
   padding-top: 91px;
   padding-bottom: 50px;
+}
+.partnership-page .alteri-section{
+  padding-top: 88px;
+  padding-bottom: 0px;
+}
+.development-section {
+    padding-top: 120px;
+}
+.development-content h2 {
+    margin-top: 17px;
+    margin-bottom: 46px;
+}
+.investors-page .alteri-bottom{
+  padding-top: 120px;
+  padding-bottom: 46px;
+}
+.investors-page .alteri-bottom h2{
+  margin-bottom: 0 !important;
 }
 .alteri-section h2{
   letter-spacing: 0.1px;
@@ -456,13 +499,36 @@ p{
     max-width: 100%;
   }
   .alteri-content-right p{
-    padding-bottom: 32px;
+    padding-bottom: 33px;
   }
   .alteri-bg{
     display: none;
   }
   .alteri-small-bg{
     display: block;
+  }
+  .alteri-section {
+    padding-bottom: 25px;
+  }
+  .aletri-card-section{
+    padding-top: 30px !important;
+  }
+  .card-abatar{
+    max-width: 31px;
+    margin-top: 8px;
+  }
+  .card-social-icon {
+    max-width: 27px;
+    right: 10px !important;
+    bottom: 13px !important;
+  }
+  .connect-top .map{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .connect-top .form-container{
+    grid-column: 1;
+    grid-row: 2;
   }
   
 }
@@ -474,6 +540,12 @@ p{
 }
 .alteri-builds img{
   vertical-align: bottom;
+}
+
+@media(max-width:768px){
+  .home-page .alteri-section {
+    padding-bottom: 49px;
+  }
 }
 /* alteri-builds end */
 
@@ -503,12 +575,12 @@ p{
 .content-top{
   margin-bottom: 31px;
 }
-.content-wrap{
-  padding-top: 19px;
-  padding-bottom: 48px;
+.content-wrap {
+  padding-top: 16px;
+  padding-bottom: 40px;
   border-top: 1px solid rgba(0, 13, 80, 0.4);
   border-bottom: 1px solid rgba(0, 13, 80, 0.4);
-  margin-bottom: 24px;
+  margin-bottom: 58px;
 }
 .box-image{
   padding-top: 53px;
@@ -564,6 +636,26 @@ p{
   .alteri-builds{
     padding-top: 12px;
   }
+  .investors-page .connect-top {
+    padding-top: 74px !important;
+    padding-bottom: 0px !important;
+  }
+  .inquiries-img {
+    width: 31.705% !important;
+
+  }
+  .inquiries h3{
+    margin-top: 11px;
+  }
+  .inquiries p{
+    margin-top: 9px !important;
+  }
+  .investors-page .inquiries .social-wrap {
+    margin-top: 20px;
+  }
+  .operation-page .footer-section {
+    padding: 40px 0 56px !important;
+  }
 }
 
 
@@ -573,6 +665,21 @@ p{
 .connect-section{
   padding-top: 110px;
   padding-bottom: 167px;
+}
+.investors-page .connect-section{
+  padding-top: 99px;
+  padding-bottom: 158px;
+}
+.investors-page .connect-top{
+  padding-top: 156px;
+  padding-bottom: 81px;
+}
+.investors-page .contact-info{
+  gap: 42px;
+}
+.partnership-page .connect-section {
+    padding-top: 122px;
+    padding-bottom: 163px;
 }
 .connect-wrap {
   display: grid;
@@ -705,9 +812,10 @@ input, select, textarea:focus{
 
 
 @media (max-width: 768px){
+  
   input, select, textarea {
     font-size: 16px;
-    line-height: 22.6px;
+    line-height: 21.9px;
   }
   input::placeholder, select::placeholder, textarea::placeholder{
   font-size: 14px;
@@ -800,11 +908,21 @@ input, select, textarea:focus{
     grid-row: 3;
   }
   
-.form-container {
-  grid-gap: 18px; 
-}
+  .form-container {
+    grid-gap: 18px; 
+  }
   .form-container h2{
     margin-bottom: 7px;
+  }
+  .investors-page .connect-section {
+    padding-top: 78px;
+    padding-bottom: 81px;
+  }
+  .investors-page .form-container h2 {
+    margin-bottom: 8px !important;
+  }
+  .investors-page .contact-info {
+    gap: 22px;
   }
 
 }
@@ -814,6 +932,9 @@ input, select, textarea:focus{
 .footer-section{
   background-color: var(--text-white-gray);
   padding: 61px 0 56px;
+}
+.operation-page .footer-section {
+  padding: 65px 0 56px;
 }
 .footer-wrap{
   display: flex;
@@ -955,18 +1076,22 @@ input, select, textarea:focus{
 
 
 /* about page style */
-.pillar-section{
-  padding-top: 90px;
+.pillar-section {
+  padding-top: 68px;
 }
 .about-page .banar-section{
   background-image: url(./assets/images/about-banar.png);
+}
+.about-page .banar-wrap{
+  padding-top: 400px;
+  padding-bottom: 420px;
 }
 
 .pillar-wrap{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  padding-top: 35px;
+  padding-top: 25px;
 }
 .pillar-item{
   background-color: var(--text-white-gray);
@@ -977,10 +1102,10 @@ input, select, textarea:focus{
   width: auto;
 }
 .pillar-content{
-  padding-top: 50px;
+  padding-top: 40px;
   padding-left: 35px;
   padding-right: 39px;
-  padding-bottom: 41px;
+  padding-bottom: 35px;
 }
 .pillar-item.left .pillar-content,
 .pillar-item.right .pillar-content{
@@ -994,12 +1119,15 @@ input, select, textarea:focus{
 } 
 .pillar-item.right img{
   margin-left: -6px;
-  margin-top: 11px;
+  margin-top: 25px;
+}
+.team{
+  letter-spacing: -1px
 }
 .pillar-content h3{
   color: var(--text-blue);
   font-weight: 500;
-  margin-bottom: 35px;
+  margin-bottom: 26px;
 }
 .pillar-content p{
   font-size: 18px;
@@ -1016,16 +1144,16 @@ input, select, textarea:focus{
   right: 30px;
 }
 .executive{
-  padding-top: 128px;
+  padding-top: 120px;
 }
 .executive-wrap{
-  padding-top: 35px;
+  padding-top: 26px;
 }
 .executive .pillar-item{
   background-color: unset;
 }
 .executive .pillar-content{
-  padding-top: 23px;
+  padding-top: 18px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
@@ -1033,11 +1161,11 @@ input, select, textarea:focus{
 .executive .pillar-content h3{
   color: var(--text-color);
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .executive .social{
   gap: 15px;
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 
@@ -1048,7 +1176,6 @@ input, select, textarea:focus{
   display: none;
 }
 
-/* কাস্টম স্টাইল */
 .swiper-button-prev,
 .swiper-button-next {
   width: 68px;
@@ -1059,6 +1186,9 @@ input, select, textarea:focus{
   background-repeat: no-repeat;
   background-position: center;
   transition: background 0.3s ease;
+}
+.swiper-button-next, .swiper-button-prev {
+    top: var(--swiper-navigation-top-offset,37.5%);
 }
 
 /* disabled হলে gray color */
@@ -1095,7 +1225,10 @@ input, select, textarea:focus{
   background-position: center;
 }
 
-
+.about-page .connect-section {
+  padding-top: 130px;
+  padding-bottom: 167px;
+}
 
 
 @media (max-width:1024px){
@@ -1111,14 +1244,31 @@ input, select, textarea:focus{
     max-width: 274px;
     margin-left: 11px;
   }
-  .pillar-item.mid img{
-    max-width: 231px;
-    margin-top: 5px;
-  }
   .pillar-content p{
     font-size: 16px;
     line-height: 17.6px;
     letter-spacing: -0.16px;
+  }
+  .pillar-section {
+    padding-top: 12px;
+  }
+  .about-page .pillar-section {
+    padding-top: 44px;
+  }
+  .pillar-item.right img {
+    max-width: 67%;
+  }
+  .pillar-item.mid img {
+    margin-top: 4px;
+  }
+  .pillar-item.mid .pillar-content{
+    padding-top: 50px;
+  }
+  .pillar-img-right{
+    margin-bottom: 18px;
+  }
+  .pillar-item.right .pillar-content h3{
+    margin-bottom: 13px ;
   }
 }
 
@@ -1127,11 +1277,38 @@ input, select, textarea:focus{
     grid-template-columns: repeat(1, 1fr);
   }
   .executive{
-    padding-top: 76px;
+    padding-top: 68px;
   }
   .swiper-button-prev,
   .swiper-button-next{
     display: none;
+  }
+  .pillar-content h3 {
+    margin-bottom: 23px;
+  }
+  .pillar-item.right img {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+  .executive-wrap{
+    padding-top: 30px;
+  }
+  .executive .pillar-content h3{
+    margin-bottom: 9px;
+  }
+  .executive .social{
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .about-page .connect-section{
+    padding-top: 75px;
+    padding-bottom: 84px;
+  }
+  .about-page .banar-content h1{
+    letter-spacing: 0.12px;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    top: var(--swiper-navigation-top-offset,36.5%);
   }
 }
 @media (max-width:1280px){
@@ -1161,7 +1338,8 @@ input, select, textarea:focus{
     padding-left: 15px;
     padding-right: 27px;
   }
-}@media (min-width:1560px){
+}
+@media (min-width:1560px){
   .pillar-wrapper{
     padding-left: 117px;
     padding-right: 118px;
@@ -1176,29 +1354,41 @@ input, select, textarea:focus{
   background-image: url(./assets/images/operation-banar.png);
 
 }
-.operation-page .banar-wrap, 
-.investors-page .banar-wrap {
-  padding-bottom:580px;
+.operation-page .banar-wrap{
+  padding-top: 370px;
+  padding-bottom:587px;
+} 
+.investors-page .banar-wrap{
+  padding-bottom:591px;
+} 
+
+.partnership-page .banar-wrap {
+  padding-bottom:592px;
 }
-.operation-page .banar-content,
-.investors-page .banar-content {
+.operation-page .banar-content{
+  position: absolute;
+  top: 38%;
+}
+.investors-page .banar-content,
+.partnership-page .banar-content {
   position: absolute;
   bottom: 146px;
 }
 .operation-page .banar-section h1,
-.investors-page .banar-section h1{
+.investors-page .banar-section h1,
+.partnership-page .banar-section h1{
   max-width: 545px;
 }
 .location-section{
   background-color: var(--text-white-gray);
-  padding-bottom: 55px;
+  padding-bottom: 35px;
 }
 .location-wrap{
   background-image: url(./assets/images/operation-map.png);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  margin-top: 37px;
   
 } 
 .location-section .map{
@@ -1206,32 +1396,29 @@ input, select, textarea:focus{
   align-items: center;
   justify-content: center;
   padding-top: 170px;
-  margin-left: -140px;
+  margin-left: -128px;
 }
 
-.location-area{
-  display: flex;
-  align-items: center;
-  background-color: var(--text-white);
-  padding: 7px;
-  border-radius: 25px;
-  margin-top: 52px;
-  position: relative;
-  border: 1px solid rgba(149, 154, 181, 0.2);
-  gap: 10px;
+.location-area {
+    display: flex;
+    align-items: center;
+    background-color: var(--text-white);
+    padding: 7px;
+    border-radius: 25px;
+    border: 1px solid rgba(149, 154, 181, 0.2);
+    margin-top: 21px;
 }
 .location-wrap .common-wrap{
   position: relative;
 }
-.tab-wrap{
-  background-color: var(--text-color);
-  padding: 17px 23px;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 300px;
-  right: 20px;
-  display: flex;
-  gap: 25px;
+.tab-wrap {
+    background-color: var(--text-color);
+    padding: 15px 22px;
+    border-radius: 10px;
+    display: flex;
+    gap: 25px;
+    max-width: 278px;
+    margin: -20px 0 0 auto;
 }
 .tab-wrap .tab-item{
   background-color: transparent;
@@ -1325,20 +1512,56 @@ circle.active {
   width: 100%;   
   height: auto;      /* adjust as needed */
   opacity: 1;
-  padding: 20px;
+  padding: 5px;
 }
-
+.map-mobile{
+  display: none;
+}
 
 
 @media (max-width:440px){
   .location-img{
     height: 112px;
+    width: 275px;
   }
 }
 @media (max-width:768px){
+  .operation-page .banar-section{
+    background-image: url(./assets/images/operation-banar-mobile.png);
+    margin-top: -61px;
+  }
+  .operation-page .banar-wrap {
+    padding-top: 339px;
+    padding-bottom: 450px;
+  }
+  .operation-page .location-content p {
+    margin-bottom: 25px;
+  }
+  .tab-wrap {
+    padding: 10px 18px;
+    max-width: 230px;
+    margin: -38px 0 0 auto;
+  }
+  .tab-wrap .tab-item {
+    font-size: 14px;
+    line-height: 15.2px;
+    letter-spacing: -0.14px;
+  }
+  .location-wrap {
+    margin-top: 43px;
+  }
   .location-area{
     flex-direction: column;
     gap: 35px;
+    margin-top: 16px;
+    padding: 10px 15px !important;
+  }
+  
+  .operation-page .map {
+    transform: scale(0.65);
+    display: block !important;
+    padding-top: 0px;
+    margin-left: -25px !important;
   }
   .location-address{
     width: 100%;
@@ -1349,8 +1572,15 @@ circle.active {
   .location-content button{
     width: 100%;
   }
-  .address-content .address{
-    margin-bottom: 13px;
+  .address-content .address {
+    margin-bottom: 6px;
+}
+  
+  .map-desktop{
+    display: none;
+  }
+  .map-mobile{
+    display: block;
   }
   
 }
@@ -1359,8 +1589,12 @@ circle.active {
   .location-address{
     gap: 15px;
   }
-  .address-content h3{
-    margin-bottom: 15px;
+  .address-content h3 {
+    margin-bottom: 9px;
+    margin-top: 11px;
+  }
+  .location-area .address-content p{
+    margin-left: 21px;
   }
   .location-area p{
     font-size: 14px;
@@ -1385,12 +1619,12 @@ circle.active {
 /* Fectory section start */
 .fectory-section{
   padding-top: 127px;
-  padding-bottom: 76px;
+  padding-bottom: 70px;
 }
 .fectory-wrap{
   display: flex;
   gap: 18px;
-  margin-bottom: 50px;
+  margin-bottom: 47px;
 }
 .fectory-img-wrap{
   width: 50%;
@@ -1398,8 +1632,11 @@ circle.active {
 .fectory-content-wrap{
   width: 50%;
   background-color: var(--text-white-gray);
-  padding: 50px 46px 0 ;
+  padding: 40px 46px 0 ;
   border-radius: 25px;
+}
+.fectory-content-wrap .fectory-title-1{
+  letter-spacing: -2.3px;
 }
 .fectory-content-wrap p{
   font-size: 18px;
@@ -1408,10 +1645,10 @@ circle.active {
   letter-spacing: -0.18px;
 }
 .fectory-p{
-  padding-bottom: 25px;
+  padding-bottom: 17px;
 }
 .fectory-info-wrap{
-  padding-top: 50px;
+  padding-top: 38px;
   padding-bottom: 51px;
 }
 .fectory-info{
@@ -1419,7 +1656,7 @@ circle.active {
   align-items: center;
   gap: 25px;
   border-top: 1px solid rgba(0, 13, 80, 0.4);
-  padding-block: 13px;
+  padding-block: 12px;
   color: var(--text-blue);
 }
 .fectory-info:last-child{
@@ -1436,11 +1673,23 @@ circle.active {
     padding-top: 37px;
     padding-bottom: 40px;
   }
+  .fectory-info {
+    padding-block: 9px;
+  }
   .fectory-info{
     gap: 10px;
   }
   .fectory-info img{
     max-width: 80%;
+  }
+  .operation-page .fectory-section {
+    padding-top: 4px;
+    padding-bottom: 40px;
+  }
+  .operation-page .fectory-content-wrap h2{
+    font-size: 24px;
+    line-height: 25px;
+    letter-spacing: -0.25px;
   }
   .fectory-info h5,
   .fectory-info span{
@@ -1461,6 +1710,9 @@ circle.active {
     font-weight: 500;
     letter-spacing: -0.14px;
   }
+  .fectory-p {
+    padding-bottom: 5px;
+  }
   
 }
 
@@ -1476,8 +1728,13 @@ circle.active {
   .fectory-content-wrap{
     width: 100%;
     order: 2;
-    padding: 25px;
+    padding: 14px 16px 21px 24px;
   }
+  .xion-p{
+    margin-bottom: 34px;
+
+  }
+
 }
 /* Fectory section end */
 
@@ -1489,7 +1746,7 @@ circle.active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 12px;
-  margin-top: 35px;
+  margin-top: 24px;
 }
 .partners-item{
   display: flex;
@@ -1521,6 +1778,13 @@ circle.active {
   .partners-img img{
     max-width: 78%;
   }
+  .partners-item{
+    border-radius: 14px;
+  }
+  .partners-inner{
+    margin-top: 28px;
+    gap: 10px;
+  }
 }
 /* partners section end */
 
@@ -1528,16 +1792,16 @@ circle.active {
 /* investors page start */
 
 .aletri-card-section{
-  padding-top: 50px;
+  padding-top: 44px;
 }
 .investors-page .banar-section{
   background-image: url(./assets/images/investors-banar-bg.png);
 }
 
 .investors-page .form-container h2{
-  max-width: 460px;
+  max-width: 458px;
   letter-spacing: -0.5px;
-  margin-bottom: 39px;
+  margin-bottom: 30px;
 }
 .investors-page .alteri-content-left{
   max-width: 49.281%;
@@ -1547,18 +1811,22 @@ circle.active {
   padding-left: 130px;
 }
 .investors-page .social-wrap{
-  margin-top: 35px;
+  margin-top: 28px;
 }
+.investors-page .alteri-top h2{
+  margin-bottom: 68px !important;
+  letter-spacing: -1.70px;
+}
+.investors-page .alteri-top span{
+  letter-spacing: 1.70px;
+}
+
 .investors-page .alteri-content-left h2{
-  margin-bottom: 77px;
+  margin-bottom: 26px;
+  letter-spacing: -0.70px;
 }
-.investors-page .social-wrap{
-  gap: 15px;
-}
-.aletri-card-area{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+.investors-page .inquiries .social-wrap{
+  gap: 14px;
 }
 .alteri-card-item{
   position: relative;
@@ -1566,7 +1834,32 @@ circle.active {
 .content-bottom{
   color: var(--text-blue);
 }
+.partnership-page .partnership-mobile{
+    display: none;
+  }
+  @media(max-width:768px){
+    .partnership-page .partnership-desktop{
+      display: none;
+    }
+    .partnership-page .partnership-mobile{
+      display: block;
+    }
+  }
+
 @media(max-width:1024px){
+  .investors-page .banar-section{
+    background-image: url(./assets/images/investors-banar-mobile-bg.png);
+    background-position:0 center;
+  }
+  .investors-page .banar-wrap {
+    padding-bottom: 440px;
+  }
+  .investors-page .banar-section {
+    margin-top: -50px;
+  }
+  .investors-page .banar-wrap {
+    padding-bottom: 404px;
+  }
   .investors-page .alteri-content-left{
     max-width: 100%;
   }
@@ -1574,13 +1867,32 @@ circle.active {
     max-width: 100%;
     padding-left: 0;
   }
+  .investors-page .alteri-top h2{
+    margin-bottom: 28px !important;
+  }
+  .investors-page .alteri-top span {
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: 0px;
+  }
+  .alteri-top .social-wrap {
+    margin-top: 23px ;
+  }
+  .alteri-top-content{
+    margin-top: 10px;
+  }
+  .alteri-content-right p:last-child{
+    padding-bottom: 0;
+  }
+  
 }
+
 /* card section start */
 .card-wrap{
   display: flex;
   gap: 16px;
   background: linear-gradient(180deg, rgba(0, 13, 80, 0) 0%, #000D50 69.84%);
-  padding-inline: 20px;
+  padding-inline: 15px;
   padding-top: 28px;
   padding-bottom: 26px;
   color: var(--text-white);
@@ -1605,20 +1917,47 @@ circle.active {
 }
 .card-social-icon{
   position: absolute;
-  right: 20px;
+  right: 15px;
   bottom: 23px;
+}
+.aletri-slider{
+  display: none;
+}
+@media (min-width: 1280px) {
+  .alteri-swiper {
+    margin-right: 117px;
+  }
+}
+@media (min-width: 768px) {
+  
+  .alteri-swiper .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+  }
+
+  /* Swiper default flex behavior বন্ধ করো */
+  .alteri-swiper .swiper-slide {
+    margin-right: 0 !important;
+    width: auto !important;
+  }
 }
 
 @media(max-width:768px){
-  .aletri-card-area{
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  .aletri-card-section .common-wrap{
+    padding: 0 0px 0 15px;
+  }
+  .aletri-slider{
+    display: block;
   }
   .card-content{
     max-width: 153px;
   }
-  .card-abatar img{
-    max-width: 78%;
-  }
+ .card-wrap {
+    padding-inline: 10px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
   .card-content span{
     font-size: 12px;
     line-height: 14px;
@@ -1634,11 +1973,13 @@ circle.active {
 
 /* inquries section start */
 .inquiries-wrap{
-  display: flex;
+  background-color: var(--text-white-gray);
   padding-block: 21px;
   padding-inline: 20px;
-  background-color: var(--text-white-gray);
   border-radius: 25px;
+}
+.inquiries-inner{
+  display: flex;
 }
 .inquiries-info .btn{
   background-color: transparent;
@@ -1646,10 +1987,13 @@ circle.active {
   border: 1px solid var(--text-color);
   border-radius: 5px;
   padding-block: 9px;
-  padding-inline: 26px;
+  padding-inline: 10px;
   max-width: 274px;
 }
-.inquiries-info .btn img{
+.inquiries-wrap .mobile-btn{
+  display: none;
+}
+.inquiries-wrap .btn img{
   width: 26px;
 }
 .inquiries-info{
@@ -1657,30 +2001,80 @@ circle.active {
   flex-direction: column;
   justify-content: space-between;
 }
+.inquiries{
+  margin-top: -6px;
+}
 .inquiries p{
   font-size: 18px;
   line-height: 19.8px;
   letter-spacing: -0.18px;
-  margin-top: 25px;
+  margin-top: 17px;
 }
 .inquiries-img{
-  width: 38.705%;
+  width: 40.705%;
 }
 .inquiries-info{
-  width: calc(100% - 38.705%);
+  width: calc(100% - 40.705%);
   padding-left: 50px;
 }
 
-@media (max-width:1024px){
+@media (max-width:768px){
+  .inquiries p{
+    font-size: 16px;
+    line-height: 17.6px;
+    letter-spacing: -0.16px;
+  }
+  .inquiries-wrap{
+    padding: 15px;
+  }
+  .form-container-title{
+    display: none;
+  }
+  .connect-top .connect-wrap {
+    row-gap: 41px;
+  }
+  
+}
+@media (max-width:1280px){
   /* .inquiries-img{
     width: 100%;
   }
 .inquiries-info{
     width: 100%;
   } */
+   .inquiries-wrap .desktop-btn{
+    
+    display: none;
+  }
+   .inquiries-wrap .mobile-btn{
+    width: 100%;
+    background-color: transparent;
+    color:var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    padding-block: 12px;
+    padding-inline: 10px;
+    margin-top: 35px;
+    display: flex;
+    font-size: 16px;
+    line-height: 17.6px;
+    letter-spacing: -0.16px;
+  }
+  .inquiries-info{
+    padding-left: 25px;
+  }
+  .inquiries-wrap .btn img{
+    width: 17px;
+  }
 }
 
 /* company information start */
+.home-page .content-top {
+    margin-bottom: 33px;
+}
+.home-page .content-wrap {
+    padding-bottom: 16px;
+}
 .investors-page .energy-wrap{
   padding: 0;
 }
@@ -1697,21 +2091,52 @@ circle.active {
 .investors-page .energy-content{
   width: calc(100% - 52.541%);
 }
-
+.investor-img-mobile{
+  display: none;
+}
 @media (max-width:1024px){
+  .home-page .content-wrap {
+    padding-bottom: 28px;
+  }
+  .home-page .form-container h2 {
+    margin-bottom: 9px;
+  }
 .investors-page .energy-image{
   width: 100%;
 }
 .investors-page .energy-content{
   width: 100%;
 }
+.investors-page .content-wrap h2{
+    letter-spacing: .3px
+  }
+  .investors-page .energy-wrap {
+    margin-top: 28px;
+    gap: 41px;
+  }
+  .investors-page .content-top {
+    margin-bottom: 21px;
+  }
+  .investors-page .content-wrap {
+    margin-bottom: 33px;
+  }
+  .investors-page .alteri-bottom {
+    padding-top: 78px;
+    padding-bottom: 27px;
+  }
+  .investor-img-desktop{
+    display: none;
+  }
+  .investor-img-mobile{
+    display: block;
+  }
 }
 /* company information end */
 
 
 /* partnership-page start */
 .development-section{
-  padding-top: 125px;
+  padding-top: 120px;
 }
 .partnership-page .banar-section{
   background-image: url(./assets/images/partnership-banar-bg.png);
@@ -1720,7 +2145,6 @@ circle.active {
   display: flex;
 
 }
-
 .development-content{
   width: calc(100% - 52.320%);
   padding-right: 74px;
@@ -1728,18 +2152,21 @@ circle.active {
 .development-img{
   width: 52.320%;
 }
-.development-content h2{
-  margin-bottom: 55px;
-}
+
 .development-item {
   background-color: var(--text-white-gray);
   padding: 20px 20px 25px;
   border-radius: 25px;
   position: relative;
-  margin-bottom: 13px;
+  margin-bottom: 14px;
+  min-height: 195px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .development-item p{
-  margin-top: 75px;
+  max-width: 616px;
 }
 .development-item img{
   width: auto;
@@ -1748,9 +2175,129 @@ circle.active {
   top: 20px;
   right: 20px;
 }
-.scales-whether{
-  max-width: 423px;
+p.scales-whether{
+  max-width: 423px !important;
 }
-.development-item p{
-  max-width: 616px;
+
+.scalable-compute-section{
+  padding-top: 110px;
+}
+.scalable-compute-wrap{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.scalable-compute-img{
+  order: 2;
+}
+.scalable-compute-content{
+  max-width: 634px;
+  padding-top: 26px;
+  padding-inline: 35px;
+  padding-bottom: 26px;
+  background-color: var(--text-white);
+  border-radius: 25px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.scalable-compute-content h2{
+  margin-bottom: 98px;
+}
+.scalable-compute-content .content-top {
+    margin-bottom: 27px;
+}
+.scalable-compute-content p{
+  max-width: 533px;
+}
+.content-top{
+  margin-bottom: 42px;
+}
+
+@media(max-width:1280px){
+  .development-content{
+    padding-right: 20px;
+  }
+  .development-content h2{
+    font-size: 40px;
+    line-height: 42.2px;
+  }
+}
+@media(max-width:1024px){
+  .development-content h2{
+    font-size: 32px;
+    line-height: 35.2px;
+  }
+}
+@media(max-width:768px){
+  .partnership-page .banar-section{
+    background-image: url(./assets/images/partnership-banar-mobile.png);
+    background-position: 0px center;
+    margin-top: -48px;
+  }
+  .partnership-page .banar-wrap {
+    padding-top: 175px;
+    padding-bottom: 601px;
+  }
+  .partnership-page .alteri-section {
+    padding-top: 52px;
+    padding-bottom: 29px;
+  }
+  .development-section {
+    padding-top: 53px;
+  }
+  .development-content h2 {
+    margin-bottom: 26px;
+  }
+  .partnership-page .alteri-content-right p {
+    padding-bottom: 22px;
+  }
+  
+  .development-area{
+    flex-direction: column;
+  }
+  .development-content{
+    width: 100%;
+    padding-right: 0;
+  }
+  .development-img{
+    width: 100%;
+  }
+  .development-item {
+    padding: 15px;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 11px;
+    min-height: unset;
+    display: block;
+  }
+  .partnership-page .pillar-dot {
+    top: 16px;
+    right: 15px;
+  }
+  .development-item p{
+    margin-top: 35px;
+  }
+  .img-wrap{
+    width: 25px;
+    height: 25px;
+  }
+  .scalable-compute-section{
+    padding-top: 68px;
+  }
+  .scalable-compute-content h2 {
+    margin-bottom: 26px;
+  }
+  .scalable-compute-content .content-top {
+    margin-bottom: 20px;
+  }
+  .partnership-page .connect-section {
+    padding-top: 76px;
+    padding-bottom: 84px;
+  }
+  .scalable-compute-content{
+    padding: 0;
+    position: unset;
+  }
 }

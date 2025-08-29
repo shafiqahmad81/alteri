@@ -84,10 +84,10 @@ const swiper = new Swiper('.mySwiper', {
     clickable: true,
   },
   loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false, 
-  },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false, 
+  // },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -102,6 +102,31 @@ const swiper = new Swiper('.mySwiper', {
   }
 });
 
+
+
+const swiper2 = new Swiper('.alteri-swiper', {
+  slidesPerView: 1.30,   // এক slide + পরের slide এর 0.2 অংশ দেখাবে
+  spaceBetween: 16,     // slide এর মধ্যে gap
+  centeredSlides: false, // false রাখলে বাম দিক থেকে শুরু হবে
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: { // Tablet and above
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: { // Desktop and above
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+  },
+});
 
 // Location js
 
