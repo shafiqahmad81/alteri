@@ -10,69 +10,16 @@ window.addEventListener('scroll', function() {
 
 const hamburgerIcon = document.getElementById("hamburger");
 const mainMenu = document.getElementById("menu");
+const path = hamburgerIcon.querySelector("svg path");
 
-hamburgerIcon.addEventListener("click", function(){
+// Hamburger click: toggle menu
+hamburgerIcon.addEventListener("click", function() {
   mainMenu.classList.toggle("show");
-})
-
-document.addEventListener("DOMContentLoaded", function () {
-  const menuItems = document.querySelectorAll(".main-menu > li");
-
-  menuItems.forEach(item => {
-    item.addEventListener("click", function (e) {
-      if (window.innerWidth < 1024) {
-        const dropdown = this.querySelector(".dropdown-wrap");
-        const plusIcon = this.querySelector("span .plus");
-        const minusIcon = this.querySelector("span .minus");
-
-        if (dropdown) {
-          e.preventDefault();
-
-          // আগের সব li রিসেট করো
-          document.querySelectorAll(".main-menu > li").forEach(li => {
-            const d = li.querySelector(".dropdown-wrap");
-            const p = li.querySelector("span .plus");
-            const m = li.querySelector("span .minus");
-
-            if (d) d.classList.remove("open");
-            if (p) {
-              p.style.opacity = "1";
-              p.style.width = "10px";
-            }
-            if (m) {
-              m.style.opacity = "0";
-              m.style.width = "0";
-            }
-          });
-
-          // বর্তমান li toggle করো
-          dropdown.classList.toggle("open");
-
-          if (dropdown.classList.contains("open")) {
-            if (plusIcon) {
-              plusIcon.style.opacity = "0";
-              plusIcon.style.width = "0";
-            }
-            if (minusIcon) {
-              minusIcon.style.opacity = "1";
-              minusIcon.style.width = "10px";
-              minusIcon.style.height = "6px";
-            }
-          } else {
-            if (plusIcon) {
-              plusIcon.style.opacity = "1";
-              plusIcon.style.width = "10px";
-            }
-            if (minusIcon) {
-              minusIcon.style.opacity = "0";
-              minusIcon.style.width = "0";
-            }
-          }
-        }
-      }
-    });
-  });
 });
+
+// Scroll event
+// window.addEventListener("scroll", updateHamburgerColor);
+
 
 
 
@@ -84,10 +31,10 @@ const swiper = new Swiper('.mySwiper', {
     clickable: true,
   },
   loop: true,
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false, 
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false, 
+  },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -222,3 +169,72 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+// tab
+
+document.querySelectorAll('.tab-item').forEach(button => {
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('data-target');
+
+    // remove active from all buttons
+    document.querySelectorAll('.tab-item').forEach(btn => btn.classList.remove('active'));
+    // remove active from all panels + hide them
+    document.querySelectorAll('.location-area').forEach(panel => {
+      panel.classList.remove('active');
+      panel.classList.add('hidden');
+    });
+
+    // add active to clicked button
+    button.classList.add('active');
+
+    // show target panel and add active class
+    const panel = document.querySelector('.' + target);
+    if (panel) {
+      panel.classList.remove('hidden');
+      panel.classList.add('active');
+    }
+  });
+});
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 50) {
+    document.getElementById("hamburger").classList.add("scrolled");
+  } else {
+    document.getElementById("hamburger").classList.remove("scrolled");
+  }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // যেকোনো .main-menu li .icon কে target করা
+  const icons = document.querySelectorAll(".main-menu li span.icon");
+
+  icons.forEach(icon => {
+    icon.addEventListener("click", function(e) {
+      if(window.innerWidth < 992){ // Mobile only
+        e.preventDefault();
+        const li = icon.closest("li"); // icon থেকে closest li
+        
+        if(!li) return; // safety check
+
+        // অন্য খোলা dropdown বন্ধ করা
+        document.querySelectorAll(".main-menu li.open").forEach(openLi => {
+          if(openLi !== li) openLi.classList.remove("open");
+        });
+
+        // Current li toggle
+        li.classList.toggle("open");
+      }
+    });
+  });
+});
+
+// video control
+
+// document.getElementById("playBtn").addEventListener("click", function () {
+//   document.getElementById("banarIfram").style.opacity = "1";
+//   document.getElementById("playBtn").style.opacity = "0";
+// });

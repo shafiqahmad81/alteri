@@ -64,7 +64,7 @@ button{
   cursor: pointer;
   border: none;
 }
-h1,h2,h3,h4,h5,h6,a,address,label,input,button{
+h1,h2,h3,h4,h5,h6,a,address,label,input,button,textarea{
   font-family: 'Satoshi', Sans-serif;
 }
 
@@ -120,9 +120,14 @@ p{
 }
 .btn img{
   width: 10px;
+  transition: transform 0.3s ease; 
 }
 .btn:hover{
   background-color: rgba(0, 13, 80, .8);
+}
+
+.btn:hover img {
+  transform: translateX(4px); 
 }
 @media(max-width:1024px){
   
@@ -155,6 +160,8 @@ p{
 }
 
 
+
+
 /* Header section start */
 .header-section{
   position: sticky;
@@ -183,7 +190,7 @@ p{
   display: flex;
   align-items: center;
   padding: 0px 49px;
-  gap: 74px;
+  gap: 62px;
   background: #fff;
   border-radius: 15px;
   position: relative;
@@ -206,32 +213,104 @@ p{
 }
 .main-menu li a:hover{
   color: var(--text-blue);
-  font-weight: 500;
 }
 
 .main-menu > li {
-  display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
 }
 
-.main-menu li .dropdown-wrap{
-  
-  background-color: transparent;
-  padding: 22px 0px;
-  align-items: center;
-  gap: 104px;
-  visibility: hidden;
-  transition: 0.3s ease-in;
-}
 
-.dropdown{
-  background-color: var(--text-white);
-  padding: 22px 49px;
+
+/* li relative, dropdown absolute */
+/* .main-menu li {
+  position: relative;
+} */
+
+/* Dropdown full width of main menu */
+.main-menu li .dropdown-wrap {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;             /* full width of parent ul */
+  padding: 0;              /* ul padding আগে flex handle করবে */
   border-radius: 15px;
-  display: flex;
-  align-items: center;
-  gap: 70px;
+  display: none;           /* hidden by default */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 99;
 }
-.main-menu li span .plus{
+
+/* Inner dropdown ul styling */
+.main-menu li .dropdown {
+  display: flex;
+  gap: 70px;
+  padding: 24px 49px;
+  list-style: none;
+  margin: 0;
+  border-radius: 15px;
+  background-color: var(--text-white);
+}
+
+
+.main-menu li span.icon {
+  position: relative;
+  display: inline-block;
+  width: 24px; /* icon container fix */
+  height: 24px;
+}
+
+.main-menu li span.icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+/* Desktop hover */
+@media (min-width: 1024px) {
+  .main-menu li:hover .dropdown-wrap {
+    display: block;
+    opacity: 1;
+  }
+  .main-menu li:hover span.icon .plus { opacity: 0; }
+  .main-menu li:hover span.icon .minus { opacity: 1; }
+}
+
+.main-menu li span.icon .plus { opacity: 1; }
+.main-menu li span.icon .minus { opacity: 0; }
+
+
+
+@media(max-width:1024px){
+  .main-menu li.open span.icon .plus { opacity: 0; }
+  .main-menu li.open span.icon .minus { opacity: 1; }
+
+  .main-menu li.open .dropdown-wrap {
+    display: block;
+    opacity: 1;
+  }
+  .main-menu > li {
+    display: block;
+
+  }
+  .main-menu li .dropdown-wrap{
+    position: relative;
+  }
+  .main-menu li{
+    position: relative;
+  }
+  .main-menu li span.icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* .main-menu li span .plus{
   transition: 0.3s ease-in;
 }
 .main-menu li span .minus {
@@ -249,18 +328,22 @@ p{
   opacity: 1; 
   width: 10px;
   height: 6px;
-}
+} */
 
-.main-menu li span .icon {
-  width: 16px;
-  height: 16px;
-  vertical-align: middle;
-}
 
-.hamburger-icon{
+
+
+  .hamburger-icon{
     display: none;
     position: relative;
     background-color: transparent;
+  }
+  .icon-path path {
+    fill: #000B44;
+    transition: fill 0.3s ease;
+  }
+  .scrolled .main-menu:not(.show) ~ .hamburger-icon .icon-path path {
+    fill: var(--text-white);
   }
 .dropdown-wrap.open {
   display: block !important;
@@ -280,6 +363,7 @@ p{
     top: 62px;
     left: 0;
     right: 0;
+    padding-top: 21px;
   }
   .main-menu li:hover .dropdown-wrap{
     visibility: inherit;
@@ -300,7 +384,7 @@ p{
   .main-menu{
     display: none;
     gap: 35px;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-inline: 15px;
     border-radius: 0px;
   }
@@ -314,6 +398,7 @@ p{
     font-size: 22px;
     line-height: 22px;
     letter-spacing: 0.22px;
+    font-weight: 500;
   }
   .main-menu > li{
     margin-bottom: 35px;
@@ -334,7 +419,8 @@ p{
     top: -46px;
     left: 0;
     right: 0;
-    height: 107vh;
+    height: 112vh;
+    overflow-y: auto;
 }
 
 .main-menu li a.header-link{
@@ -351,6 +437,12 @@ p{
 .main-menu li .dropdown{
   padding: 0;
 }
+  .link-active{
+    font-weight: 500;
+  }
+  .open .header-link{
+    color: var(--text-blue);
+  }
 }
 
 
@@ -362,7 +454,29 @@ p{
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: -90px;
+  position: relative;
 }
+
+
+.banar-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  opacity: 0;      
+  display: none;          /* প্রথমে লুকানো থাকবে */
+  transition: opacity 0.5s ease;
+}
+
+#playBtn {
+  transition: opacity 0.5s ease;
+}
+
+
 .banar-wrap{
   display: flex;
   align-items: center;
@@ -371,11 +485,31 @@ p{
   padding-bottom: 387px;
   
 }
+.home-page .banar-content{
+  position: relative;
+  z-index: 999;
+}
+.close-ifram{
+  width: 48px;
+  height: 48px;
+  background-color: var(--text-white-gray);
+  border-radius: 50px;
+  padding: 10px;
+  position: absolute;
+  top: 140px;
+  right: 50px;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  display: none;
+}
+
 .play-wrap{
-  width: calc(100% - 788px);
+  /* width: calc(100% - 788px); */
   position: relative;
 }
-.play-wrap button {
+.play-wrap a {
     max-width: 125px;
     background-color: transparent;
     position: absolute;
@@ -384,6 +518,11 @@ p{
 }
 .banar-content{
   max-width: 788px;
+  width: 100%;
+}
+.button-wrap{
+  max-width: calc(100% - 788px);
+  width: 100%;
 }
 .banar-content h1{
   max-width: 484px;
@@ -399,6 +538,9 @@ p{
 }
 .explore-wrap span{
   color: var(--text-white);
+}
+.banar-section a{
+  text-decoration: none;
 }
 @media (max-width: 1024px){
   .home-page .banar-section{
@@ -431,7 +573,7 @@ p{
     width: 100%;
     position: unset;
   }
-  .play-wrap button {
+  .play-wrap a {
     max-width: 80px;
     top: unset;
     right: unset;
@@ -814,7 +956,7 @@ input, select, textarea:focus{
 @media (max-width: 768px){
   
   input, select, textarea {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 21.9px;
   }
   input::placeholder, select::placeholder, textarea::placeholder{
@@ -859,7 +1001,7 @@ input, select, textarea:focus{
     margin-top: 3px;
   }
   .contact-wrap{
-    gap: 18px;
+    gap: 21px;
   }
   .contact-title{
     gap: 6px;
@@ -879,6 +1021,9 @@ input, select, textarea:focus{
   }
   .social-wrap{
     gap: 14px;
+  }
+  .contact-info p{
+    text-align: end;
   }
 
 }
@@ -1365,10 +1510,8 @@ input, select, textarea:focus{
 .partnership-page .banar-wrap {
   padding-bottom:592px;
 }
-.operation-page .banar-content{
-  position: absolute;
-  top: 38%;
-}
+
+.operation-page .banar-content,
 .investors-page .banar-content,
 .partnership-page .banar-content {
   position: absolute;
@@ -1456,6 +1599,13 @@ input, select, textarea:focus{
   display: flex;
   align-items: center;
 }
+.location-area {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
 .location-area p{
   font-size: 18px;
   line-height: 19.8px;
@@ -1504,7 +1654,7 @@ circle.active {
   width: 0;    
   height: 0;         /* default hide */
   opacity: 0;
-  transition: width 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
   padding: 0 20px;  /* content single line prevent wrap */
 }
 
@@ -1537,6 +1687,10 @@ circle.active {
   .operation-page .location-content p {
     margin-bottom: 25px;
   }
+  .operation-page .banar-content{
+    position: absolute;
+    top: 38%;
+  }
   .tab-wrap {
     padding: 10px 18px;
     max-width: 230px;
@@ -1562,6 +1716,9 @@ circle.active {
     display: block !important;
     padding-top: 0px;
     margin-left: -25px !important;
+  }
+  .tab-item::after{
+    bottom: -8px;
   }
   .location-address{
     width: 100%;
@@ -1833,6 +1990,7 @@ circle.active {
 }
 .content-bottom{
   color: var(--text-blue);
+  font-weight: 700;
 }
 .partnership-page .partnership-mobile{
     display: none;
@@ -2073,7 +2231,8 @@ circle.active {
     margin-bottom: 33px;
 }
 .home-page .content-wrap {
-    padding-bottom: 16px;
+    padding-bottom: 48px;
+    margin-bottom: 25px;
 }
 .investors-page .energy-wrap{
   padding: 0;
@@ -2097,6 +2256,7 @@ circle.active {
 @media (max-width:1024px){
   .home-page .content-wrap {
     padding-bottom: 28px;
+    margin-bottom: 14px;
   }
   .home-page .form-container h2 {
     margin-bottom: 9px;
